@@ -5,8 +5,8 @@ variable "REGION" {
 variable "AMIS" {
   type = map(any)
   default = {
-    us-east-1 = "ami-0261755bbcb8c4a84"
-    us-east-2 = "ami-0430580de6244e02e"
+    us-east-1  = "ami-0261755bbcb8c4a84"
+    us-east-2  = "ami-0430580de6244e02e"
     ap-south-1 = "ami-08e5424edfe926b43"
   }
 }
