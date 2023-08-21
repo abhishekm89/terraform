@@ -2,5 +2,5 @@
 terraLOCK
 terraLOCK.pub
 .terraform.lock.hcl
-.idea/inspectionProfiles/
+.idea/
 .terraform/
