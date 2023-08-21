@@ -60,27 +60,27 @@ variable "ALL_IPv6" {
 }
 
 variable "PUB_SUB_1" {
-  default = "172.21.1.0/24"
+  default = "172.20.1.0/24"
 }
 
 variable "PUB_SUB_2" {
-  default = "172.21.2.0/24"
+  default = "172.20.2.0/24"
 }
 
 variable "PUB_SUB_3" {
-  default = "172.21.3.0/24"
+  default = "172.20.3.0/24"
 }
 
 variable "PRIV_SUB_1" {
-  default = "172.21.4.0/24"
+  default = "172.20.4.0/24"
 }
 
 variable "PRIV_SUB_2" {
-  default = "172.21.5.0/24"
+  default = "172.20.5.0/24"
 }
 
 variable "PRIV_SUB_3" {
-  default = "172.21.6.0/24"
+  default = "172.20.6.0/24"
 }
 
 variable "RMQ_USER" {
