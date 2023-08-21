@@ -3,4 +3,5 @@ terraLOCK
 terraLOCK.pub
 .terraform.lock.hcl
 .idea/
-.terraform/
+.terraform/modules
+.terraform/providers
