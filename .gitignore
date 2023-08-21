@@ -3,6 +3,4 @@ terraLOCK
 terraLOCK.pub
 .terraform.lock.hcl
 .idea/
-.terraform/providers
-.terraform/modules/vpc/.git
-.terraform/modules/vpc/.github
+.terraform/
