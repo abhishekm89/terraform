@@ -47,6 +47,10 @@ variable "VPC_NAME" {
   default = "terraVPC"
 }
 
+variable "VPC_CIDR" {
+  default = "172.20.0.0/16"
+}
+
 variable "ALL_IPv4" {
   default = "0.0.0.0/0"
 }
