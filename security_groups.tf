@@ -52,11 +52,10 @@ resource "aws_security_group" "terraSG-beanstalk-ec2" {
     // Allowed SSH connection only from BastionHost EC2 instance
   }
 }
-
+# Bacnkend Services -> RDS | ActiveMQ | ElastiCache
 resource "aws_security_group" "terraSG-backend" {
   name        = "terraSG-backend"
   description = "Security group for Backend Services"
-  // Bacnend Services -> RDS | ActiveMQ | ElastiCache
   vpc_id = module.vpc.vpc_id
   egress {
     from_port   = 0
