@@ -27,7 +27,7 @@ variable "ZONE3" {
   default = "us-east-1c"
 }
 
-variable "USER" {
+variable "USERNAME" {
   default = "ubuntu"
 }
 
