@@ -88,7 +88,7 @@ variable "RMQ_USER" {
 }
 
 variable "RMQ_PASS" {
-  default = "rabbit123"
+  default = "rabbitmq11211"
 }
 
 variable "DB_NAME" {
