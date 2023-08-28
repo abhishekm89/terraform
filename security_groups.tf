@@ -67,8 +67,15 @@ resource "aws_security_group" "terraSG-backend" {
     from_port       = 0
     protocol        = "-1"
     to_port         = 0
+    security_groups = [aws_security_group.terraSG-beanstalk-ec2.id]
+    # Beanstalk-EC2 Instance is allowed to Access backend Services
+  }
+  ingress {
+    from_port = 3306
+    protocol = "tcp"
+    to_port = 3306
     security_groups = [aws_security_group.terraSG-bastionHost-ec2.id]
-    // Beanstalk EC2 Instance is allowed to Access backend Services
+    # BastionHost-EC2 is allowed to Access RDS on Port 3306 for DB_Initialization
   }
 }
 
