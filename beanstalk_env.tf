@@ -23,7 +23,7 @@ resource "aws_elastic_beanstalk_environment" "terraBEAN-ENV" {
     name      = "Subnets"
     namespace = "aws:ec2:vpc"
     value     = join(",", [module.vpc.private_subnets[0], module.vpc.private_subnets[1], module.vpc.private_subnets[2]])
-    #   Join List of Strings seperated by comma [,] -> [Terraform Built-In Functions]
+    #  Join List of Strings seperated by comma [,] -> [Terraform Built-In Functions]
   }
   setting {
     name      = "ELBSubnets"
