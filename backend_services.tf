@@ -35,6 +35,7 @@ resource "aws_db_instance" "terraRDS-instance" {
 resource "aws_elasticache_cluster" "terraElastiCache-cluster" {
   cluster_id           = "elasticache-cluster"
   engine               = "memcached"
+  node_type = "cache.t2.micro"
   num_cache_nodes      = 1
   parameter_group_name = "default.memcached1.5"
   security_group_ids   = [aws_security_group.terraSG-backend.id]
