@@ -12,7 +12,7 @@ resource "aws_elastic_beanstalk_environment" "terraBEAN-ENV" {
   setting {
     name      = "IamInstanceProfile"
     namespace = "aws:autoscaling:launchconfiguration"
-    value     = "AWSServiceRoleForElasticBeanstalk"
+    value     = "elasticbeanstalk-ec2-role"
   }
   setting {
     name      = "AssociatePublicIpAddress"
