@@ -29,16 +29,27 @@
 │   on beanstalk_env.tf line 2, in resource "aws_elastic_beanstalk_environment" "terraBEAN-ENV":
 │    2: resource "aws_elastic_beanstalk_environment" "terraBEAN-ENV" {
 
-*****  FIXED  *****
+*****  FIXED  ***** update -> ParameterGroup_name
 │ Error: creating ElastiCache Cache Cluster (elasticache-cluster): InvalidParameterCombination: Expected a parameter group of family memcached1.6 but found one of family memcached1.5
 │       status code: 400, request id: 1751a208-8602-4925-9b80-4c0a842163b6
 │   with aws_elasticache_cluster.terraElastiCache-cluster,
 │   on backend_services.tf line 35, in resource "aws_elasticache_cluster" "terraElastiCache-cluster":
 │   35: resource "aws_elasticache_cluster" "terraElastiCache-cluster" {
 
-╷
+╷*****  FIXED  *****  insert -> associate_public_ip_address = true
 │ Error: file provisioner error
 │   with aws_instance.terraBASTION[0],
 │   on bastion_host.tf line 14, in resource "aws_instance" "terraBASTION":
 │   14:   provisioner "file" {
 │ host for provisioner cannot be empty
+
+
+
+aws_instance.terraBASTION[0] (remote-exec): /tmp/db_deploy.sh: 4: cannot open /home/ubuntu/vprofile-project/src/main/resources/db_backup.sql
+aws_instance.terraBASTION[0] (remote-exec): : No such file
+aws_instance.terraBASTION[0] (remote-exec): /tmp/db_deploy.sh: 4: mysql: not found
+│ Error: remote-exec provisioner error
+│   with aws_instance.terraBASTION[0],
+│   on bastion_host.tf line 20, in resource "aws_instance" "terraBASTION":
+│   20:   provisioner "remote-exec" {
+│ error executing "/tmp/terraform_1539285888.sh": Process exited with status 127
