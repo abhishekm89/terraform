@@ -5,3 +5,33 @@
         # mysql -h ${rds-endpoint} -u ${dbuser} --password=${dbpass} accounts --ssl-mode=DISABLED < /home/ubuntu/vprofile-project/src/main/resources/db_backup.sql
    > ubuntu 18
         # mysql -h ${rds-endpoint} -u ${dbuser} --password=${dbpass} accounts < /home/ubuntu/vprofile-project/src/main/resources/db_backup.sql
+
+
+> Output:
+
+╷ *****  FIXED  *****
+│ Error: creating RDS DB Instance (terraform-20230829061445652400000001): DBParameterGroupNotFound: DBParameterGroup not found: default.mysql5.6
+│       status code: 404, request id: 2dbb2495-8c4a-446c-949d-47866c513005
+│
+│   with aws_db_instance.terraRDS-instance,
+│   on backend_services.tf line 17, in resource "aws_db_instance" "terraRDS-instance":
+│   17: resource "aws_db_instance" "terraRDS-instance" {
+│
+╵
+╷*****  FIXED  *****
+│ Error: creating ElastiCache Cache Cluster (elasticache-cluster): InvalidParameterValue: The parameter CacheNodeType must be provided and must not be null.
+│       status code: 400, request id: 5f61f73f-7460-4c0c-a6d3-60be9c9e96a9
+│
+│   with aws_elasticache_cluster.terraElastiCache-cluster,
+│   on backend_services.tf line 35, in resource "aws_elasticache_cluster" "terraElastiCache-cluster":
+│   35: resource "aws_elasticache_cluster" "terraElastiCache-cluster" {
+│
+╵
+╷ *****  FIXED  *****
+│ Error: waiting for Elastic Beanstalk Environment (e-twr2gjpu2k) create: couldn't find resource (21 retries)
+│
+│   with aws_elastic_beanstalk_environment.terraBEAN-ENV,
+│   on beanstalk_env.tf line 2, in resource "aws_elastic_beanstalk_environment" "terraBEAN-ENV":
+│    2: resource "aws_elastic_beanstalk_environment" "terraBEAN-ENV" {
+│
+╵
