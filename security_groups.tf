@@ -14,6 +14,10 @@ resource "aws_security_group" "terraSG-beanstalk-elb" {
     to_port     = 80
     cidr_blocks = ["0.0.0.0/0"]
   }
+  tags = {
+    Name = "terraSG-beanstalk-elb"
+    Environment = "Production"
+  }
 }
 
 resource "aws_security_group" "terraSG-bastionHost-ec2" {
@@ -31,6 +35,10 @@ resource "aws_security_group" "terraSG-bastionHost-ec2" {
     protocol    = "tcp"
     to_port     = 22
     cidr_blocks = [var.MY_IP]
+  }
+  tags = {
+    Name = "terraSG-bastionHost"
+    Environment = "Production"
   }
 }
 
@@ -50,6 +58,10 @@ resource "aws_security_group" "terraSG-beanstalk-ec2" {
     to_port         = 22
     security_groups = [aws_security_group.terraSG-bastionHost-ec2.id]
     // Allowed SSH connection only from BastionHost EC2 instance
+  }
+  tags = {
+    Name = "terraSG-beanstalk-ec2"
+    Environment = "Production"
   }
 }
 # Backend Services -> RDS | ActiveMQ | ElastiCache
@@ -76,6 +88,10 @@ resource "aws_security_group" "terraSG-backend" {
     to_port         = 3306
     security_groups = [aws_security_group.terraSG-bastionHost-ec2.id]
     # BastionHost-EC2 is allowed to Access RDS on Port 3306 for DB_Initialization
+  }
+  tags = {
+    Name = "terraSG-backend"
+    Environment = "Production"
   }
 }
 
