@@ -1,5 +1,5 @@
 # TERRAFORMATION - AWS
-![aws_stack_terraform_workflow_1](https://github.com/abhishekm89/terraform/assets/65073773/ab59999a-5b66-411e-be8f-1828b7c7a916)
+![aws_stack_terraform_workflow_1](https://github.com/abhishekm89/terraform/blob/e3eb0cae648526847f2fe587a91607b39251676e/aws_stack_terraform_workflow_1.png)
 
 ## Preparation Step:
   - Generate SSH Keys Before Running Terraform Script. [terraLOCK]
