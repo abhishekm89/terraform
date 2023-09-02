@@ -1,6 +1,4 @@
 # TERRAFORMATION - AWS
-
-## Architecture of the Terraformation Project:
 ![aws_stack_terraform_workflow_1](https://github.com/abhishekm89/terraform/assets/65073773/ab59999a-5b66-411e-be8f-1828b7c7a916)
 
 ## Preparation Step:
